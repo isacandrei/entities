@@ -236,11 +236,11 @@ abstract class Model implements ArrayAccess, JsonSerializable
 	{
 		if (!$this->exists)
 		{
-			 return false;
+			return false;
 		}
 
-		 // TODO is it a lot better performance wise if we only save the modified attributes?
-		 return $this->setAttributes($attributes)->save();
+		// TODO is it a lot better performance wise if we only save the modified attributes?
+		return $this->setAttributes($attributes)->save();
 	}
 
 	/**
