@@ -122,15 +122,6 @@ abstract class Model implements ArrayAccess, JsonSerializable
 	}
 
 	/**
-	 * @param   string $table table name
-	 * @return void
-	 */
-	public function setTable($table)
-	{
-		$this->table = $table;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getPrimaryKey()

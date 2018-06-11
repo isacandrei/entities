@@ -22,7 +22,4 @@ $driver = DatabaseFactory::getDriver('mysql', $options);
 $modelUser = new User($driver, $attributes);
 $modelContent = new Content($driver);
 
-// Table name should always be prefixed with #__ (Joomla style)
-$modelUser->setTable('#__users');
-
 print_r($modelUser->find(948));

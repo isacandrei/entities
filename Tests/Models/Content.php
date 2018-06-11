@@ -17,6 +17,14 @@ use Joomla\Entity\Model;
  */
 class Content extends Model
 {
+  /**
+	 * The table name.
+	 *
+	 * @var    string
+	 * @since  __DEPLOY_VERSION__
+	 */
+	protected $table = '#__content';
+
 	/**
 	 * The attributes that should be cast to native types.
 	 *
