@@ -9,21 +9,19 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+
+use Joomla\Database\DatabaseFactory;
 use Joomla\Entity\Tests\Models\User;
+use Joomla\Entity\Tests\Models\Content;
 
-$user = User::find(132);
+$options = array('user' => 'gsoc18_webservices', 'password' => 'gsoc18_webservices', 'database' => 'gsoc18_webservices');
+$attributes = array('table' => 'kf3n7_users');
 
-$user->resetCount = 10;
+$driver = DatabaseFactory::getDriver('mysql', $options);
 
-$user->update();
+$modelUser = new User($driver, $attributes);
+$modelContent = new Content($driver);
 
-$user = new User;
+$modelUser->setTable('kf3n7_users');
 
-$user->email = "test@test.com";
-
-$user->save();
-
-// $key = $user->getPrimaryKey() - 1;
-
-// User::find($key)->delete();
-
+print_r($modelUser->find(948));
